@@ -1,0 +1,767 @@
+<html>
+
+<head>
+<style type="text/css">
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+}
+
+#canvas {
+    width:1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+span, div {
+  position: absolute;
+  color: #aaa;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
+  font-family: Helvetica;
+  text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none; 
+}
+
+div {
+  bottom: 60px;
+  &:nth-of-type(2) {
+    bottom: 20px;
+    button {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #2266bb;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+    
+
+h1 {
+  color: #181818;
+  font-size: 120px;
+  line-height: 1.0em;
+  margin: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+a {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width:  60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  float: left;
+}
+
+a i {
+  display: block;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-transform: scale3d(0.1, 0.1, 1);
+     -moz-transform: scale(0.1);
+      -ms-transform: scale(0.1);
+       -o-transform: scale(0.1);
+          transform: scale(0.1);
+  -webkit-transition: -webkit-transform 1.5s;
+     -moz-transition:    -moz-transform 1.5s;
+      -ms-transition:     -ms-transform 1.5s;
+       -o-transition:      -o-transform 1.5s;
+          transition:         transform 1.5s;
+}
+
+a:hover i {
+  -webkit-transform: scale3d(1, 1, 1);
+     -moz-transform: scale(1);
+      -ms-transform: scale(1);
+       -o-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+
+}
+
+a:nth-of-type(12n+0)  i { background-color: hsl(   0, 100%, 50% ); }
+a:nth-of-type(12n+1)  i { background-color: hsl(  30, 100%, 50% ); }
+a:nth-of-type(12n+2)  i { background-color: hsl(  60, 100%, 50% ); }
+a:nth-of-type(12n+3)  i { background-color: hsl(  90, 100%, 50% ); }
+a:nth-of-type(12n+4)  i { background-color: hsl( 120, 100%, 50% ); }
+a:nth-of-type(12n+5)  i { background-color: hsl( 150, 100%, 50% ); }
+a:nth-of-type(12n+6)  i { background-color: hsl( 180, 100%, 50% ); }
+a:nth-of-type(12n+7)  i { background-color: hsl( 210, 100%, 50% ); }
+a:nth-of-type(12n+8)  i { background-color: hsl( 240, 100%, 50% ); }
+a:nth-of-type(12n+9)  i { background-color: hsl( 270, 100%, 50% ); }
+a:nth-of-type(12n+10) i { background-color: hsl( 300, 100%, 50% ); }
+a:nth-of-type(12n+11) i { background-color: hsl( 330, 100%, 50% ); }
+    
+    
+    </style>
+    
+ 
+
+
+
+
+</head>
+
+
+<body>
+Physical data manipulation
+<canvas id="canvas"></canvas>
+<span>Drag with your mouse, right-click to slice.</span>
+
+    
+    
+    
+    
+    
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+<a href="#"><i></i></a><a href="#"><i></i></a>
+
+
+    
+    
+    
+    
+       <script type="text/javascript">
+'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+  window.setTimeout(callback, 1e3 / 60);
+};
+
+var accuracy = 5;
+var gravity = 400;
+var clothY = 24;
+var clothX = 50;
+var spacing = 8;
+var tearDist = 60;
+var friction = 0.99;
+var bounce = 0.5;
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+canvas.width = Math.min(1000, window.innerWidth);
+canvas.height = 1000;
+
+ctx.strokeStyle = '#555';
+
+var mouse = {
+  cut: 8,
+  influence: 36,
+  down: false,
+  button: 1,
+  x: 0,
+  y: 0,
+  px: 0,
+  py: 0
+};
+
+var Point = function () {
+  function Point(x, y) {
+    _classCallCheck(this, Point);
+
+    this.x = x;
+    this.y = y;
+    this.px = x;
+    this.py = y;
+    this.vx = 0;
+    this.vy = 0;
+    this.pinX = null;
+    this.pinY = null;
+
+    this.constraints = [];
+  }
+
+  Point.prototype.update = function update(delta) {
+    if (this.pinX && this.pinY) return this;
+
+    if (mouse.down) {
+      var dx = this.x - mouse.x;
+      var dy = this.y - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (mouse.button === 1 && dist < mouse.influence) {
+        this.px = this.x - (mouse.x - mouse.px);
+        this.py = this.y - (mouse.y - mouse.py);
+      } else if (dist < mouse.cut) {
+        this.constraints = [];
+      }
+    }
+
+    this.addForce(0, gravity);
+
+    var nx = this.x + (this.x - this.px) * friction + this.vx * delta;
+    var ny = this.y + (this.y - this.py) * friction + this.vy * delta;
+
+    this.px = this.x;
+    this.py = this.y;
+
+    this.x = nx;
+    this.y = ny;
+
+    this.vy = this.vx = 0;
+
+    if (this.x >= canvas.width) {
+      this.px = canvas.width + (canvas.width - this.px) * bounce;
+      this.x = canvas.width;
+    } else if (this.x <= 0) {
+      this.px *= -1 * bounce;
+      this.x = 0;
+    }
+
+    if (this.y >= canvas.height) {
+      this.py = canvas.height + (canvas.height - this.py) * bounce;
+      this.y = canvas.height;
+    } else if (this.y <= 0) {
+      this.py *= -1 * bounce;
+      this.y = 0;
+    }
+
+    return this;
+  };
+
+  Point.prototype.draw = function draw() {
+    var i = this.constraints.length;
+    while (i--) {
+      this.constraints[i].draw();
+    }
+  };
+
+  Point.prototype.resolve = function resolve() {
+    if (this.pinX && this.pinY) {
+      this.x = this.pinX;
+      this.y = this.pinY;
+      return;
+    }
+
+    this.constraints.forEach(function (constraint) {
+      return constraint.resolve();
+    });
+  };
+
+  Point.prototype.attach = function attach(point) {
+    this.constraints.push(new Constraint(this, point));
+  };
+
+  Point.prototype.free = function free(constraint) {
+    this.constraints.splice(this.constraints.indexOf(constraint), 1);
+  };
+
+  Point.prototype.addForce = function addForce(x, y) {
+    this.vx += x;
+    this.vy += y;
+  };
+
+  Point.prototype.pin = function pin(pinx, piny) {
+    this.pinX = pinx;
+    this.pinY = piny;
+  };
+
+  return Point;
+}();
+
+var Constraint = function () {
+  function Constraint(p1, p2) {
+    _classCallCheck(this, Constraint);
+
+    this.p1 = p1;
+    this.p2 = p2;
+    this.length = spacing;
+  }
+
+  Constraint.prototype.resolve = function resolve() {
+    var dx = this.p1.x - this.p2.x;
+    var dy = this.p1.y - this.p2.y;
+    var dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist < this.length) return;
+
+    var diff = (this.length - dist) / dist;
+
+    if (dist > tearDist) this.p1.free(this);
+
+    var mul = diff * 0.5 * (1 - this.length / dist);
+
+    var px = dx * mul;
+    var py = dy * mul;
+
+    !this.p1.pinX && (this.p1.x += px);
+    !this.p1.pinY && (this.p1.y += py);
+    !this.p2.pinX && (this.p2.x -= px);
+    !this.p2.pinY && (this.p2.y -= py);
+
+    return this;
+  };
+
+  Constraint.prototype.draw = function draw() {
+    ctx.moveTo(this.p1.x, this.p1.y);
+    ctx.lineTo(this.p2.x, this.p2.y);
+  };
+
+  return Constraint;
+}();
+
+var Cloth = function () {
+  function Cloth(free) {
+    _classCallCheck(this, Cloth);
+
+    this.points = [];
+
+    var startX = canvas.width / 2 - clothX * spacing / 2;
+
+    for (var y = 0; y <= clothY; y++) {
+      for (var x = 0; x <= clothX; x++) {
+        var point = new Point(startX + x * spacing, 20 + y * spacing);
+        !free && y === 0 && point.pin(point.x, point.y);
+        x !== 0 && point.attach(this.points[this.points.length - 1]);
+        y !== 0 && point.attach(this.points[x + (y - 1) * (clothX + 1)]);
+
+        this.points.push(point);
+      }
+    }
+  }
+
+  Cloth.prototype.update = function update(delta) {
+    var i = accuracy;
+
+    while (i--) {
+      this.points.forEach(function (point) {
+        point.resolve();
+      });
+    }
+
+    ctx.beginPath();
+    this.points.forEach(function (point) {
+      point.update(delta * delta).draw();
+    });
+    ctx.stroke();
+  };
+
+  return Cloth;
+}();
+
+function setMouse(e) {
+  var rect = canvas.getBoundingClientRect();
+  mouse.px = mouse.x;
+  mouse.py = mouse.y;
+  mouse.x = e.clientX - rect.left;
+  mouse.y = e.clientY - rect.top;
+}
+
+canvas.onmousedown = function (e) {
+  mouse.button = e.which;
+  mouse.down = true;
+  setMouse(e);
+};
+
+canvas.onmousemove = setMouse;
+
+canvas.onmouseup = function () {
+  return mouse.down = false;
+};
+
+canvas.oncontextmenu = function (e) {
+  return e.preventDefault();
+};
+
+var cloth = new Cloth();
+
+function zeroG() {
+  gravity = 0;
+  cloth = new Cloth(true);
+}
+
+;(function update(time) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  cloth.update(0.016);
+
+  window.requestAnimFrame(update);
+})(0);  
+
+
+    </script>
+    
+</body>
+
+</html>
